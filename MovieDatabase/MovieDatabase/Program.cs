@@ -27,13 +27,13 @@ Console.WriteLine("Welcome to the Movie List Application!");
 Console.WriteLine($"There are {countOfMovies} movies in this list.");
 Console.WriteLine();
 
-bool needValidCategory = true;
 bool continueLooping = true;
 
 while (continueLooping)
 {
+    bool needValidCategory = true;
     while (needValidCategory == true)
-    {
+    { 
         Console.WriteLine("Which category are you interested in (animated, drama, horror, or scifi)?");
         string chosenCategory = Console.ReadLine().ToLower().Trim();
 
@@ -48,11 +48,16 @@ while (continueLooping)
                 }
             }
         }
-        else Console.WriteLine("That is not a valid category. Please select animated, drama, horror, or scifi");
+        else
+        {
+            Console.WriteLine("That is not a valid category. Please select animated, drama, horror, or scifi");
+        }
     }
+    Console.Write("Continue? (y/n): ");
+    continueLooping = Console.ReadLine().ToLower().Trim() == "y";
 }
-Console.Write("Continue? (y/n): ");
-continueLooping = Console.ReadLine().ToLower().Trim() == "y";
+
+
 
 Console.WriteLine("Hope you enjoy one of the movies!");
 
